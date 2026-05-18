@@ -256,6 +256,54 @@ orgs.newOrg('polarsys.capella', 'eclipse-capella') {
         }
       ],
     },
+    orgs.newRepo('arcadia-sysmlv2-lib') {
+      allow_merge_commit: true,
+      allow_update_branch: false,
+      default_branch: "master",
+      delete_branch_on_merge: false,
+      dependabot_security_updates_enabled: true,
+      description: "",
+      homepage: "",
+      topics+: [
+        "capella-addon"
+      ],
+      web_commit_signoff_required: false,
+      workflows+: {
+        default_workflow_permissions: "write",
+      },
+      branch_protection_rules: [
+        orgs.newBranchProtectionRule('master') {
+          required_approving_review_count: 1,
+          requires_linear_history: true,
+          requires_status_checks: false,
+          requires_strict_status_checks: true,
+        }
+      ],
+    },
+    orgs.newRepo('capella-sysmlv2-bridge') {
+      allow_merge_commit: true,
+      allow_update_branch: false,
+      default_branch: "master",
+      delete_branch_on_merge: false,
+      dependabot_security_updates_enabled: true,
+      description: "",
+      homepage: "",
+      topics+: [
+        "capella-addon"
+      ],
+      web_commit_signoff_required: false,
+      workflows+: {
+        default_workflow_permissions: "write",
+      },
+      branch_protection_rules: [
+        orgs.newBranchProtectionRule('master') {
+          required_approving_review_count: 1,
+          requires_linear_history: true,
+          requires_status_checks: false,
+          requires_strict_status_checks: true,
+        }
+      ],
+    },
     orgs.newRepo('capella-sss-transition') {
       allow_merge_commit: true,
       allow_update_branch: false,
